@@ -1,4 +1,4 @@
-// const { pool } = require("../");
+const { pool } = require("../db.js");
 
 class User {
   static async totalUsers() {
@@ -21,24 +21,24 @@ class User {
     return disposingResults.rows[0];
   }
 
-  static async createUser(info) {
-    const db1 =
-      "INSERT INTO users (first_name, last_name, email, password) VALUES ($1, $2, $3, $4) RETURNING*";
-    const disposingResults = await pool.query(db1, [
-      info.first_name,
-      info.last_name,
-      info.email,
-      info.password,
-    ]);
-    const { id } = await this.getByEmail(info.email);
+  // static async createUser(info) {
+  //   const db1 =
+  //     "INSERT INTO users (first_name, last_name, email, password) VALUES ($1, $2, $3, $4) RETURNING*";
+  //   const disposingResults = await pool.query(db1, [
+  //     info.first_name,
+  //     info.last_name,
+  //     info.email,
+  //     info.password,
+  //   ]);
+  //   const { id } = await this.getByEmail(info.email);
 
-    const disposingResults2 =
-      "INSERT INTO finance (expenses, income, savings, budget, user_id) VALUES ($1, $2, $3, $4, $5) RETURNING*";
-    const dbResults2 = await pool.query(disposingResults2, [
-      id,
-    ]);
-    return disposingResults.rows[0], dbResults2.rows[0];
-  }
+  //   const disposingResults2 =
+  //     "INSERT INTO  (--, --, --, --, user_id) VALUES ($1, $2, $3) RETURNING*";
+  //   const dbResults2 = await pool.query(disposingResults2, [
+  //     id,
+  //   ]);
+  //   return disposingResults.rows[0], dbResults2.rows[0];
+  // }
 
   static async updateUser({
     id,

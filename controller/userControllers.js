@@ -2,7 +2,7 @@ const Users = require("../model/userModel");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
-// const databasePool = require("../db");
+const databasePool = require("../db");
 
 const allUsers = async (req, res) => {
   const users = await Users.totalUsers();
