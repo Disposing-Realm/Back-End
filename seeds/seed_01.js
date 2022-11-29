@@ -8,6 +8,6 @@
 
 
   await knex('users').insert([
-    { first_name: 'marcy', last_name: 'lab', email: 'test123@gmail.com', password: '12345678' },
+    { username: 'marcylab', first_name: 'marcy', last_name: 'lab', email: 'test123@gmail.com', password: '12345678' },
   ]);
 }
