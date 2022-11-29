@@ -8,7 +8,7 @@ const userRouter = require("./route/userRoute.js");
 // const authenticate = require("./auth");
 const cookieParser = require("cookie-parser");
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = 3001;
 
 app.use(cors());
 app.use(express.json());
@@ -37,7 +37,7 @@ const homePage = (req, res) => {
 
 app.get("/", indexpg);
 app.get("/signup ", signUpPage);
-app.get("/home", authenticate, homePage);
+// app.get("/home", authenticate, homePage);
 // app.get("/ ", authenticate, getPage);
 
 
