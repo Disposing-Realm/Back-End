@@ -9,13 +9,13 @@
 
 ## Table of Contents
 
-1. [Usage](#Usage)
-2. [Requirements](#requirements)
-3. [Development](#development)
-    i. [Installing Dependencies](#installing-dependencies)
-    ii. [Tasks](#tasks)
-4. [Team](#team)
-5. [Contributing](#contributing)
+1. [Usage](#usage)
+1. [Requirements](#requirements)
+1. [Development](#development)
+    1. [Installing Dependencies](#installing-dependencies)
+    1. [Tasks](#tasks)
+1. [Team](#team)
+1. [Contributing](#contributing)
 
 ## Usage
 
