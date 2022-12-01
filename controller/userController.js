@@ -5,7 +5,8 @@ require("dotenv").config();
 const databasePool = require("../db");
 
 const allUsers = async (req, res) => {
-  const users = await Users.totalUsers();
+  const userId = req.id;
+  const users = await Users.totalUsers(userId);
   res.status(200).send(users);
 };
 
