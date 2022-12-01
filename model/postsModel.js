@@ -20,10 +20,8 @@ class Post {
     const disposingResults = await pool.query(db1, [
       info.post_description,
       info.post_image,
-      info.post_date,
-      info.update_date,
-      info.likes,
-      info.dislikes,
     ]);
   }
 }
+
+module.exports = Post;
