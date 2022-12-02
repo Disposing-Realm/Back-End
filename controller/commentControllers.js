@@ -1,8 +1,7 @@
 const Comments = require("../model/commentModel");
 
 const allComments = async (req, res) => {
-    const commentId = req.id;
-    const comments = await Comments.totalUsers(commentId);
+    const comments = await Comments.totalUsers();
     res.status(200).send(comments);
   };
 
