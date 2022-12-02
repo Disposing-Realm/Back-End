@@ -9,7 +9,7 @@ router.get("/logout", userController.logout);
 
 router.get("/getById", authenticate, userController.getUserById);
 router.post("/", userController.userRegister);
-// router.delete("/:id", authenticate, userController.deleteUser);
+router.delete("/:id", authenticate, userController.userDelete);
 router.put("/", authenticate, userController.userUpdate);
 
 router.all("*", (req, res) => {
