@@ -9,4 +9,4 @@ router.get("/feed/:id", postsController.getPost);
 
 router.post("/feed", postsController.createPost);
 
-module.exports = router;
+module.exports = router; 
