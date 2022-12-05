@@ -7,13 +7,25 @@ class Comments {
     return disposingResults.rows;
   }
 
-  static async singleComment(id) {
-    const database = "SELECT * FROM comments where id = $1";
-    const disposingdb = "SELECT * FROM posts WHERE comment_id = $1";
-    const disposingdb2 = await pool.query(disposingdb, [id]);
-    const disposingResults = await pool.query(database, [id]);
-    return { ...disposingdb2.rows[0], ...disposingResults.rows[0] };
+  static async addComment({post_id, user_id, likes, dislikes, commentary}) {
+    const query = "INSERT INTO comments (post_id, user_id, likes, dislikes, commentary) VALUES ($1, $2, $3, $4, $5)";
+    const disposingResults = await pool.query(query, [post_id, user_id, likes, dislikes, commentary]);
+    return { ...disposingResults.rows[0]};
   }
+
+  static async like(likes, id){
+    const query = 'UPDATE comments SET likes = $1 WHERE id = $2'
+    return await pool.query(query, [likes, id])
+
+  }
+
+  static async dislike(dislikes, id){
+    const query = 'UPDATE comments SET dislikes = $1 WHERE id = $2'
+    return await pool.query(query, [dislikes, id])
+
+  }
+
+
 }
 
 module.exports = Comments;
