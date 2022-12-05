@@ -22,22 +22,23 @@ class User {
   }
 
   static async createUser(info) {
-    const db1 =
-      "INSERT INTO users (first_name, last_name, email, password) VALUES ($1, $2, $3, $4) RETURNING*";
-    const disposingResults = await pool.query(db1, [
+    const query =
+      "INSERT INTO users (first_name, last_name, username, email, password) VALUES ($1, $2, $3, $4, $5) RETURNING*";
+    const disposingResults = await pool.query(query, [
       info.first_name,
       info.last_name,
+      info.username,
       info.email,
       info.password,
     ]);
-    const { id } = await this.getByEmail(info.email);
+    // const { id } = await this.getByEmail(info.email);
 
-    const disposingResults2 =
-      "INSERT INTO posts (post_description, post_image, user_id) VALUES ($1, $2, $3) RETURNING*";
-    const dbResults2 = await pool.query(disposingResults2, [
-      id,
-    ]);
-    return disposingResults.rows[0], dbResults2.rows[0];
+    // const disposingResults2 =
+    //   "INSERT INTO posts (post_description, post_image, user_id) VALUES ($1, $2, $3) RETURNING*";
+    // const dbResults2 = await pool.query(disposingResults2, [
+    //   id,
+    // ]);
+    return disposingResults.rows[0];
   }
 
   static async updateUser({

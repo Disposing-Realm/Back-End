@@ -35,6 +35,7 @@ const userRegister = async (req, res) => {
       password,
       first_name,
       last_name,
+      username
     } = req.body;
     if (!validateInputs(email, password)) {
       throw Error("Invalid Credentials.");
@@ -45,6 +46,7 @@ const userRegister = async (req, res) => {
     const newUserInfo = {
       first_name,
       last_name,
+      username,
       email,
       password: hashedPassword,
     };

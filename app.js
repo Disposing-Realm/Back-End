@@ -5,8 +5,9 @@ const bodyParser = require("body-parser");
 const userRouter = require("./route/userRoute.js");
 const postsRouter = require("./route/postsRoute.js");
 
+
 // const Router = require("./route/Route");
-// const Router = require("./route/Route");
+const commentsRouter = require("./route/commentsRoute");
 // const authenticate = require("./auth");
 const cookieParser = require("cookie-parser");
 const app = express();
@@ -45,7 +46,7 @@ app.get("/signup ", signUpPage);
 
 app.use("/users", userRouter);
 app.use("/posts", postsRouter)
-// app.use("/ ", Router);
+app.use("/comments", commentsRouter);
 // app.use("/ ", Router);
 
 app.listen(PORT, () => {
