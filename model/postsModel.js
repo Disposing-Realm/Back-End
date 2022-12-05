@@ -2,10 +2,10 @@ const { pool } = require("../db.js");
 
 class Post {
   static async totalPost() {
-    const database = "SELECT * FROM posts";
+    const database = 'SELECT * FROM posts' 
     const databaseResults = await pool.query(database);
-    return databaseResults.rows;
-  }
+    return databaseResults.rows; 
+  } 
 
   static async singlePost(id) {
     const database = "SELECT * FROM posts where id = $1";

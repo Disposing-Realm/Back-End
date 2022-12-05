@@ -3,6 +3,8 @@ const cors = require("cors");
 const path = require("path");
 const bodyParser = require("body-parser");
 const userRouter = require("./route/userRoute.js");
+const postsRouter = require("./route/postsRoute.js");
+
 // const Router = require("./route/Route");
 // const Router = require("./route/Route");
 // const authenticate = require("./auth");
@@ -42,6 +44,7 @@ app.get("/signup ", signUpPage);
 
 
 app.use("/users", userRouter);
+app.use("/posts", postsRouter)
 // app.use("/ ", Router);
 // app.use("/ ", Router);
 
