@@ -13,19 +13,19 @@ const getPost = async (req, res) => {
 
 const createPost = async (req, res) => {
   if (!req.body) {
-    res.status(400).send("Info not found in request")
+    return res.status(400).send("Info not found in request")
   }
  
   if (!req.body.post_description) {
-    res.status(400).send("Description not found in request")
+    return res.status(400).send("Description not found in request")
   }
 
   if (!req.body.post_image) {
-    res.status(400).send("Image not found in request")
+    return res.status(400).send("Image not found in request")
   }
  
   await Post.createPostModel(req.body);
-  res.status(200).send("Post created successfully")
+  return res.status(200).send("Post created successfully")
 }
  
  
