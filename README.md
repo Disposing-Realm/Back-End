@@ -23,11 +23,20 @@
 
 ## Requirements
 
-- Node 0.10.x
-- Redis 2.6.x
-- Postgresql 9.1.x
-- etc
-- etc
+"axios": "^1.2.0",
+"bcrypt": "^5.1.0",
+"body-parser": "^1.20.1",
+"cookie-parser": "^1.4.6",
+"cors": "^2.8.5",
+"dotenv": "^16.0.3",
+"ejs": "^3.1.8",
+"eslint": "^8.28.0",
+"express": "^4.18.2",
+"jsonwebtoken": "^8.5.1",
+"knex": "^2.3.0",
+"node-fetch": "^3.3.0",
+"nodemon": "^2.0.20",
+"pg": "^8.8.0"
 
 ## Development
 
@@ -36,7 +45,7 @@
 From within the root directory:
 
 ```sh
-<COMMANDS_HERE>
+<npm install express knex nodemon cors pg bcrypt axios jsonwebtoken>
 ```
 
 ### Roadmap
