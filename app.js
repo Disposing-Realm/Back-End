@@ -11,7 +11,7 @@ const commentsRouter = require("./route/commentsRoute");
 const authenticate = require("./auth");
 const cookieParser = require("cookie-parser");
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 app.use(cors());
 app.use(express.json());
@@ -22,25 +22,25 @@ app.use(express.static("public"));
 
 app.set("view engine", "ejs");
 
-const indexpg = (req, res) => {
-  res.sendFile(path.join(__dirname, "./public/views", "index.html"));
-};
+// const indexpg = (req, res) => {
+//   res.sendFile(path.join(__dirname, "./public/views", "index.html"));
+// };
 
-const signUpPage = (req, res) => {
-  res.sendFile(path.join(__dirname, "./public/views", "loginPage.html"));
-};
+// const signUpPage = (req, res) => {
+//   res.sendFile(path.join(__dirname, "./public/views", "loginPage.html"));
+// };
 
-const homePage = (req, res) => {
-  res.sendFile(path.join(__dirname, "./public/views", "homePage.html"));
-};
+// const homePage = (req, res) => {
+//   res.sendFile(path.join(__dirname, "./public/views", "homePage.html"));
+// };
 
-const getPage = (req, res) => {
-  res.sendFile(path.join(__dirname, "./public/views", "Page.html"));
-};
+// const getPage = (req, res) => {
+//   res.sendFile(path.join(__dirname, "./public/views", "Page.html"));
+// };
 
-app.get("/", indexpg);
-app.get("/signup ", signUpPage);
-app.get("/home", authenticate, homePage);
+// app.get("/", indexpg);
+// app.get("/signup ", signUpPage);
+// app.get("/home", authenticate, homePage);
 // app.get("/ ", authenticate, getPage);
 
 

@@ -2,7 +2,7 @@ const { pool } = require("../db.js");
 
 class Post {
   static async totalPost() {
-    const database = 'SELECT * FROM posts' 
+    const database = 'SELECT * FROM posts ORDER BY post_id DESC'
     const databaseResults = await pool.query(database);
     return databaseResults.rows; 
   } 
