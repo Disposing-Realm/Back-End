@@ -16,11 +16,12 @@ class Post {
   }
   static async createPostModel(info) {
     const query =
-      "INSERT INTO posts (user_id, post_description, post_image) VALUES ($1, $2, $3) RETURNING *";
+      "INSERT INTO posts (user_id, post_description, post_image, post_image2) VALUES ($1, $2, $3, $4) RETURNING *";
     const disposingResults = await pool.query(query, [
       info.user_id,
       info.post_description,
-      info.post_image
+      info.post_image,
+      info.post_image2, 
     ]); 
   }
 

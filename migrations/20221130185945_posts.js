@@ -7,6 +7,7 @@
         table.increments('post_id').primary();
         table.string('post_description').notNullable;
         table.string('post_image').notNullable;
+        table.string('post_image2').notNullable;
         table.timestamp("post_date").notNullable().defaultTo(knex.fn.now());
         table.timestamp("updated_date").notNullable().defaultTo(knex.fn.now());
         table.integer('likes').notNullable().defaultTo(0)
