@@ -37,9 +37,9 @@ const userRegister = async (req, res) => {
       last_name,
       username
     } = req.body;
-    if (!validateInputs(email, password)) {
-      throw Error("Invalid Credentials.");
-    }
+    // if (!validateInputs(email, password)) {
+    //   throw Error("Invalid Credentials.");
+    // }
 
     const saltRounds = 5;
     const hashedPassword = await bcrypt.hash(password, saltRounds);
@@ -50,8 +50,8 @@ const userRegister = async (req, res) => {
       email,
       password: hashedPassword,
     };
-    console.log(newUserInfo);
-    Users.createUser(newUserInfo);
+    console.log(req.body);
+    await Users.createUser(newUserInfo);
     const token = jwt.sign({ email: email }, process.env.AUTH_KEY);
     res.cookie("token", token).sendStatus(200);
   } catch (err) {
