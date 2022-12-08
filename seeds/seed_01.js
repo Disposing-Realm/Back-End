@@ -12,7 +12,7 @@
   ]);
 
   await knex('posts').insert([
-    { post_description: 'Clean 4 Life', post_image: 'https://www.marcylabschool.org/social-media-shared-fb.jpg', user_id: 1 },
+    { post_description: 'Clean 4 Life', post_image: 'https://www.marcylabschool.org/social-media-shared-fb.jpg', post_image2:'https://www.marcylabschool.org/social-media-shared-fb.jpg', user_id: 1 },
   ]);
 
   await knex('comments').insert([
