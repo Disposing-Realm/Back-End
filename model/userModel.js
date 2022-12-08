@@ -31,6 +31,8 @@ class User {
       info.email,
       info.password,
     ]);
+    console.log("hi there")
+    console.log(info)
     // const { id } = await this.getByEmail(info.email);
 
     // const disposingResults2 =
