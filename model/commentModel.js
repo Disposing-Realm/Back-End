@@ -8,8 +8,9 @@ class Comments {
   }
 
   static async addComment({post_id, user_id, likes, dislikes, commentary}) {
-    const query = "INSERT INTO comments (post_id, user_id, likes, dislikes, commentary) VALUES ($1, $2, $3, $4, $5)";
-    const disposingResults = await pool.query(query, [post_id, user_id, likes, dislikes, commentary]);
+    const query = "INSERT INTO comments (post_id, user_id, likes, dislikes, commentary) VALUES ($1, $2, $3, $4, $5) RETURNING *";
+    const disposingResults = await pool.query(query, [post_id, user_id, likes, dislikes, commentary]);  
+    
     return { ...disposingResults.rows[0]};
   }
 
