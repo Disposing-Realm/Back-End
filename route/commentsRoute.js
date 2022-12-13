@@ -5,7 +5,7 @@ const authenticate = require("../auth");
 
 const router = express.Router();
 
-router.get("/", authenticate, commentControllers.allComments);
+router.get("/:id"/*, authenticate*/, commentControllers.allComments);
 
 router.post("/new-comment", authenticate, commentControllers.addComment);
 

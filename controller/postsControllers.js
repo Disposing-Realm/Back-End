@@ -12,6 +12,7 @@ const getPost = async (req, res) => {
 };
 
 const createPost = async (req, res) => {
+  
   if (!req.body) {
     return res.status(400).send("Info not found in request")
   }
@@ -24,8 +25,8 @@ const createPost = async (req, res) => {
     return res.status(400).send("Image not found in request")
   }
  
-  await Post.createPostModel(req.body);
-  return res.status(200).send("Post created successfully")
+  let jsonResponse = await Post.createPostModel(req.body);
+  return res.status(200).json(jsonResponse)/*.send("Post created successfully")*/
 }
  
  

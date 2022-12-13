@@ -23,6 +23,8 @@ class Post {
       info.post_image,
       info.post_image2, 
     ]); 
+    return disposingResults.rows
+    
   }
 
   static async like(likes, id){

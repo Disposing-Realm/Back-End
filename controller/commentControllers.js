@@ -1,7 +1,7 @@
 const Comments = require("../model/commentModel");
 
 const allComments = async (req, res) => {
-  const comments = await Comments.getAllComments();
+  const comments = await Comments.getAllComments(+req.params.id);
   res.status(200).send(comments);
 };
 
