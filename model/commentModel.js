@@ -1,15 +1,16 @@
 const { pool } = require("../db.js");
 
 class Comments {
-  static async getAllComments() {
-    const database = "SELECT * FROM comments";
-    const disposingResults = await pool.query(database);
+  static async getAllComments(id) {
+    const database = "SELECT * FROM comments WHERE post_id = $1";
+    const disposingResults = await pool.query(database, [id]);
     return disposingResults.rows;
   }
 
   static async addComment({post_id, user_id, likes, dislikes, commentary}) {
-    const query = "INSERT INTO comments (post_id, user_id, likes, dislikes, commentary) VALUES ($1, $2, $3, $4, $5)";
-    const disposingResults = await pool.query(query, [post_id, user_id, likes, dislikes, commentary]);
+    const query = "INSERT INTO comments (post_id, user_id, likes, dislikes, commentary) VALUES ($1, $2, $3, $4, $5) RETURNING *";
+    const disposingResults = await pool.query(query, [post_id, user_id, likes, dislikes, commentary]);  
+    
     return { ...disposingResults.rows[0]};
   }
 

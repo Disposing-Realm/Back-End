@@ -1,7 +1,7 @@
 const Comments = require("../model/commentModel");
 
 const allComments = async (req, res) => {
-  const comments = await Comments.getAllComments();
+  const comments = await Comments.getAllComments(+req.params.id);
   res.status(200).send(comments);
 };
 
@@ -21,6 +21,7 @@ const addComment = async (req, res) => {
 
   if (comments) {
     res.status(200).send(comments);
+    
   } else {
     res.status(404).send("comment not found");
   }
