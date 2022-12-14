@@ -106,3 +106,6 @@ dist
 #database files
 /db.js
 knexfile.js
+
+#env
+*/.env
