@@ -12,7 +12,7 @@
   ]);
 
   await knex('posts').insert([
-    { post_description: 'A step to a beautiful community', post_image: 'https://cms.prod.nypr.digital/images/334663/fill-1200x800%7Cformat-jpeg%7Cjpegquality-85', post_image2:'https://brooklyneagle.com/wp-content/uploads/2016/02/brooklyn-litter-essay-contest.jpg', user_id: 1 }, { post_description: 'Huh? what trash', post_image: 'https://www.archpaper.com/wp-content/uploads/2020/09/7235072128_58434052b3_k-1280x853.jpg', post_image2:'https://media.abc10.com/assets/WTHR/images/fc27b4ff-5e68-4266-91d0-2fa52ee9d352/fc27b4ff-5e68-4266-91d0-2fa52ee9d352_750x422.jpeg', user_id: 3 }
+    { post_description: 'A step to a beautiful community', post_image: 'https://cms.prod.nypr.digital/images/334663/fill-1200x800%7Cformat-jpeg%7Cjpegquality-85', post_image2:'https://brooklyneagle.com/wp-content/uploads/2016/02/brooklyn-litter-essay-contest.jpg', user_id: 1 }, { post_description: 'Huh? what trash?', post_image: 'https://www.archpaper.com/wp-content/uploads/2020/09/7235072128_58434052b3_k-1280x853.jpg', post_image2:'https://media.abc10.com/assets/WTHR/images/fc27b4ff-5e68-4266-91d0-2fa52ee9d352/fc27b4ff-5e68-4266-91d0-2fa52ee9d352_750x422.jpeg', user_id: 3 }
   ]);
 
   await knex('comments').insert([
