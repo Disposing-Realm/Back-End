@@ -16,7 +16,7 @@
   ]);
 
   await knex('comments').insert([
-    { commentary: 'Thanks for caring our environment', post_id: 1, user_id: 1 },
+    { commentary: 'Thanks for caring for our environment', post_id: 1, user_id: 1 },
   ]);
 };
 
