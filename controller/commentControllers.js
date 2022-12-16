@@ -6,10 +6,10 @@ const allComments = async (req, res) => {
 };
 
 const addComment = async (req, res) => {
-  const user_id = req.id;
   const {
     post_id,
-    commentary
+    commentary,
+    user_id
   } = req.body;
   const comments = await Comments.addComment({
     post_id,
